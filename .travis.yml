@@ -1,3 +1,11 @@
+dist: trusty
+
+before_install:
+  - sudo apt-get -qq update
+
+install:
+  - sudo pip install ansible
+
 script:
   - "ansible-playbook -i inventory/hosts.example --syntax-check jupyter-notebook/install-jupyter.yml"
   - "sudo ansible-playbook -i inventory/hosts.example jupyter-notebook/install-jupyter.yml"
