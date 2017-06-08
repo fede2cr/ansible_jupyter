@@ -8,4 +8,4 @@ install:
 
 script:
   - "ansible-playbook -i inventory/hosts.example --syntax-check install-jupyter.yml"
-  - "sudo ansible-playbook -i inventory/hosts.example install-jupyter.yml"
+  - "sudo ANSIBLE_CONFIG=.ansible-travis.cfg ansible-playbook -i inventory/hosts.example install-jupyter.yml"
