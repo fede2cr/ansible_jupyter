@@ -12,7 +12,7 @@ Ansible recipes for installing Jupyter notebook via python pip. This works on De
 Install the latest version of Ansible on a management computer, python2 on the computers you want to install Jupyter notebook, and then run:
 
 ```bash
-ansible-playbook install-jupyter.yml -i inventory/hosts -K
+ansible-playbook install-jupyter.yml
 ```
 
 It also does:
