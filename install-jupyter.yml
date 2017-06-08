@@ -32,7 +32,7 @@
     - name: Ejecuta python3 -m bash_kernel.install
       command: python3 -m bash_kernel.install
       become: yes
-    - command: "jupyter notebook --generate-config"
+    - command: "jupyter notebook --generate-config --allow-root"
       become: no
     - name: Agrega clave "greencore" para autenticacion
       lineinfile:
@@ -42,8 +42,8 @@
         state: present
       become: no
     - name: Activa módulos de jupyter
-      command: jupyter nbextension enable --py --sys-prefix widgetsnbextension
+      command: jupyter nbextension enable --py --sys-prefix widgetsnbextension --allow-root
       become: yes
     - name: Activa módulos de jupyter
-      command: jupyter nbextension enable --py --sys-prefix ipyleaflet
+      command: jupyter nbextension enable --py --sys-prefix ipyleaflet --allow-root
       become: yes
