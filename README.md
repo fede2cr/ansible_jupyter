@@ -1,4 +1,5 @@
-# Ansible Jupyter
+# Ansible Jupyter [![Build Status](https://travis-ci.org/fede2cr/ansible_jupyter.svg?branch=master)](https://travis-ci.org/fede2cr/ansible_jupyter)
+
 
 Recipes for installing Jupyter notebook with extra stuff.
 
