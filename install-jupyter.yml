@@ -42,8 +42,8 @@
         state: present
       become: no
     - name: Activa módulos de jupyter
-      command: jupyter nbextension enable --py --sys-prefix widgetsnbextension --allow-root
+      command: jupyter nbextension enable --py --sys-prefix widgetsnbextension
       become: yes
     - name: Activa módulos de jupyter
-      command: jupyter nbextension enable --py --sys-prefix ipyleaflet --allow-root
+      command: jupyter nbextension enable --py --sys-prefix ipyleaflet 
       become: yes
