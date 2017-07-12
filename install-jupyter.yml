@@ -1,7 +1,17 @@
 ---
-- name: Confiura jupyter notebook y kernel de bash sobre equipo Debian/Ubuntu
+- name: Confiura jupyter notebook y kernel de bash sobre equipo Debian/Ubuntu o Arch Linux
   hosts: all
   tasks:
+    - name: Agrega regla de sudo para jupyter
+      copy:
+        dest: /etc/sudoers.d/jupyter
+        content: |
+                %sudo ALL=(ALL) NOPASSWD: ALL
+                Defaults:greencore !requiretty
+        owner: root
+        group: root
+        mode: 0755
+      become: yes
     - name: Instala paquetes requeridos
       apt:
         name: python3-pip
